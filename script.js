@@ -466,13 +466,18 @@ function addAnswersToggleButton() {
         
         // Add event listener
         toggleButton.addEventListener('click', () => {
-            const questionsReview = document.getElementById('questions-review');
+            let questionsReview = document.getElementById('questions-review');
             if (questionsReview && questionsReview.style.display !== 'none') {
                 questionsReview.style.display = 'none';
                 toggleButton.textContent = 'Show Answer Review';
             } else {
                 if (!questionsReview) {
                     displayResultsWithAnswers();
+                    // Show the review section immediately after creating it
+                    questionsReview = document.getElementById('questions-review');
+                    if (questionsReview) {
+                        questionsReview.style.display = 'block';
+                    }
                 } else {
                     questionsReview.style.display = 'block';
                 }
