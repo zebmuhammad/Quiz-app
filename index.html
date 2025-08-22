@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Test Your Knowledge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container fade-in" id="landing-container">
+        <header>
+            <h1><i class="fas fa-brain"></i> QuizMaster</h1>
+            <p>Test your knowledge in various subjects</p>
+        </header>
+        
+        <div class="intro">
+            <h2>Welcome to QuizMaster!</h2>
+            <p>Challenge yourself with our timed quizzes. Select a subject below to get started. Each question has a 15-second time limit!</p>
+            <p>Your scores will be saved to our leaderboard where you can compare your performance with others.</p>
+        </div>
+        
+        <h3>Choose a Subject</h3>
+        <div class="subject-grid">
+            <div class="subject-card" data-subject="html">
+                <i class="fab fa-html5"></i>
+                <h4>HTML</h4>
+                <p>10 Questions</p>
+            </div>
+            <div class="subject-card" data-subject="css">
+                <i class="fab fa-css3-alt"></i>
+                <h4>CSS</h4>
+                <p>10 Questions</p>
+            </div>
+            <div class="subject-card" data-subject="javascript">
+                <i class="fab fa-js"></i>
+                <h4>JavaScript</h4>
+                <p>10 Questions</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" id="view-leaderboard">View Leaderboard</button>
+        </div>
+    </div>
+    
+    <div class="container fade-in quiz-container" id="quiz-container">
+        <header>
+            <h1 id="quiz-subject">Subject Quiz</h1>
+            <p>Test your knowledge with these challenging questions</p>
+        </header>
+        
+        <div class="timer" id="timer">15s</div>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar"></div>
+        </div>
+        
+        <div class="question" id="question">
+            <h3 id="question-text">Question will appear here</h3>
+        </div>
+        
+        <div class="options" id="options">
+            <!-- Options will be inserted here by JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button class="btn btn-secondary" id="prev-btn">Previous</button>
+            <button class="btn" id="next-btn">Next</button>
+            <button class="btn btn-success" id="submit-btn" style="display: none;">Submit Quiz</button>
+        </div>
+    </div>
+    
+    <div class="container fade-in results-container" id="results-container">
+        <header>
+            <h1>Your Results</h1>
+            <p>See how you performed in the quiz</p>
+        </header>
+        
+        <h2>Quiz Completed!</h2>
+        <div class="score-display" id="score-display">Score: 0/10</div>
+        <p id="percentage">Percentage: 0%</p>
+        
+        <div class="form-group">
+            <label for="username">Enter your name for the leaderboard:</label>
+            <input type="text" class="form-control" id="username" placeholder="Your name">
+        </div>
+        
+        <div>
+            <button class="btn" id="save-score">Save Score</button>
+            <button class="btn btn-secondary" id="retry-quiz">Retry This Quiz</button>
+            <button class="btn" id="choose-subject">Choose Another Subject</button>
+        </div>
+    </div>
+    
+    <div class="container fade-in leaderboard-container" id="leaderboard-container">
+        <header>
+            <h1><i class="fas fa-trophy"></i> Leaderboard</h1>
+            <p>Top scores across all subjects</p>
+        </header>
+        
+        <table class="leaderboard">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Score</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Leaderboard rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" id="back-to-home">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
